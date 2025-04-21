@@ -37,7 +37,7 @@ class MetaSignal(type):
 
 class Property:
 
-    def __init__(self, type: type, fget: typing.Callable[[typing.Any], typing.Any] | None, fset: typing.Callable[[typing.Any, typing.Any], None] | None, freset: typing.Callable[[typing.Any, typing.Any], None] | None, doc: str, /, notify: PySide6.QtCore.Signal[[], None] | None = ..., designable: bool = ..., scriptable: bool = ..., stored: bool = ..., user: bool = ..., constant: bool = ..., final: bool = ...) -> None: ...
+    def __init__(self, type: type, fget: typing.Callable[[typing.Any], typing.Any] | None = ..., fset: typing.Callable[[typing.Any, typing.Any], None] | None = ..., freset: typing.Callable[[typing.Any, typing.Any], None] | None = ..., doc: str = ..., /, notify: PySide6.QtCore.Signal[[], None] | None = ..., designable: bool = ..., scriptable: bool = ..., stored: bool = ..., user: bool = ..., constant: bool = ..., final: bool = ...) -> None: ...
 
     def __call__(self, func: typing.Callable[..., typing.Any], /) -> PySide6.QtCore.Property: ...
     def deleter(self, fdel: typing.Callable[[typing.Any], None], /) -> PySide6.QtCore.Property: ...
@@ -6128,6 +6128,7 @@ class QObject(Shiboken.Object):
 
     destroyed                : typing.ClassVar[Signal] = ... # destroyed(); destroyed(QObject*)
     objectNameChanged        : typing.ClassVar[Signal] = ... # objectNameChanged(QString)
+    staticMetaObject         : typing.ClassVar[PySide6.QtCore.QMetaObject] = ... # staticMetaObject()
 
     def __init__(self, /, parent: PySide6.QtCore.QObject | None = ..., *, objectName: str | None = ...) -> None: ...
 
