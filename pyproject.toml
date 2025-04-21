@@ -1,14 +1,27 @@
 [project]
-name = "pyside6-stubs"
-version = "0.1.0"
+name = "PySide6-stubs"
+version = "6.8.3.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
     { name = "moreih29", email = "moreih29@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pyside6~=6.8.3",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/PySide6-stubs"]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.399",
+]
+
+[tool.pyright]
+typeCheckingMode = "off"
